@@ -25,7 +25,6 @@ file {
   require => Exec['apt-get update']
 }
 
-
 file {
   "/root/.ssh/id_rsa":
   source => "puppet:///modules/hadoop/id_rsa",
@@ -50,4 +49,47 @@ ssh_authorized_key { "ssh_key":
     type   => "ssh-rsa",
     user   => "root",
     require => File['/root/.ssh/id_rsa.pub']
+}
+
+exec { 'hadoop_in_path':
+    command => '/bin/echo \'export PATH=$PATH:/opt/hadoop-1.1.2/bin\' >> /etc/bash.bashrc '
+}
+
+package { "avahi-daemon":
+      ensure => "installed",
+      require => Exec['apt-get update']
+}
+#XXX for debugging
+package { "avahi-utils":
+      ensure => "installed",
+      require => Exec['apt-get update']
+}
+
+
+file { 
+  "/etc/avahi/avahi-daemon.conf":
+  source => "puppet:///modules/hadoop/avahi-daemon.conf",
+  owner => root,
+  group => root,
+  notify  => Service["avahi-daemon"],
+  require => Package["avahi-daemon"]
+}
+
+
+service{ "avahi-daemon":
+      ensure     => "running",
+      enable => true,
+      require =>  File['/etc/avahi/avahi-daemon.conf']
+}
+
+file{ "/etc/hosts":
+   source => "puppet:///modules/hadoop/hosts",
+   owner => root,
+   group => root,
+}
+file{ "/etc/avahi/hosts":
+   source => "puppet:///modules/hadoop/hosts",
+   owner => root,
+   group => root,
+   notify => Service["avahi-daemon"]
 }
