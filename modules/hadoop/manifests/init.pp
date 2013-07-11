@@ -2,10 +2,10 @@ class hadoop {
  $hadoop_home = "/opt/hadoop"
 
 exec { "download_hadoop":
-command => "wget -O /tmp/hadoop.tar.gz http://apache.openmirror.de/hadoop/common/hadoop-1.1.2/hadoop-1.1.2.tar.gz",
-path => $path,
-unless => "ls /opt | grep hadoop-1.1.2",
-require => Package["openjdk-6-jdk"]
+  command => "wget -O /tmp/hadoop.tar.gz http://apache.openmirror.de/hadoop/common/hadoop-1.1.2/hadoop-1.1.2.tar.gz",
+  path => $path,
+  unless => "ls /opt | grep hadoop-1.1.2",
+  require => Package["openjdk-6-jdk"]
 }
 
 exec { "unpack_hadoop" :
