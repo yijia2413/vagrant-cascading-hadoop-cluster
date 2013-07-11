@@ -41,6 +41,34 @@ the master, format hdfs and start the cluster.
 After a little while, all daemons will be running and you have a fully working
 hadoop cluster.
 
+### Stopping the cluster
+
+If you want to shut down your cluster, but want to keep it around for later
+use, shut down all the services and tell vagrant to stop the machines like this:
+
+     $ vagrant ssh master
+     $ (master) sudo stop-all.sh
+     $ exit or Ctrl-D
+     $ vagrant halt
+
+When you want to use it again, simply do this:
+
+     $ vagrant up
+     $ vagrant ssh master
+     $ sudo start-all.sh
+
+
+### Getting rid of the cluster
+
+If you don't need the cluster anymore and want to get your disk-space back do
+this:
+
+     $ vagrant destroy
+
+This will only delete the VMs all local files in the directory stay untouched
+and can be used again, if you decide to start up a new cluster.
+     
+
 ## Interacting with the cluster
 
 ### Webinterface
