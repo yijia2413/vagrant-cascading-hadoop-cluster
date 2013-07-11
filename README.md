@@ -79,7 +79,7 @@ cluster.
 ## Performance
 
 Since this is a fully virtualized environment running on your computer, it will
-not be super-fast. This is however also not the goal. The goal is to have a fully
+not be super-fast. This is not the goal of this setup. The goal is to have a fully
 distributed cluster for testing and troubleshooting. 
 
 To not overload the host machine, has each tasktracker a hard limit of 1 map task
@@ -101,3 +101,12 @@ If you change any of the puppet modules, you can simply apply the changes with
 vagrants built-in provisioner.
 
     $ vagrant provision
+
+## Wishlist
+
+- have it working on windows
+- run as other user than root
+- have a way to configure the names/ips in only one file
+- make it run with the vagrant-aws-plugin
+- have a way to define the hadoop version globally
+- use dynamic apache mirror for downloading
