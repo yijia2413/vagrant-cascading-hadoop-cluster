@@ -49,7 +49,7 @@ The namenode webinterface is available under http://master.local:50070/dfshealth
 jobtracker is available under http://master.local:50030/jobtracker.jsp
 
 The cluster uses [zeroconf](http://en.wikipedia.org/wiki/Zero-configuration_networking) 
-(a.k.a. bonjour) for name resoltion. This means, that
+(a.k.a. bonjour) for name resolution. This means, that
 you never have to remember any IP nor will you have to fiddle with your
 `/etc/hosts` file.
 
