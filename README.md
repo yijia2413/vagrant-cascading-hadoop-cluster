@@ -1,8 +1,7 @@
 # vagrant-hadoop-cluster - extended
 
 Deploying [apache-hadoop](http://hadoop.apache.org) in a virtualized cluster in
-simple steps for local testing or just counting words with
-[vagrant](http//vagrantup.com).
+simple steps. Have your own cluster for local testing or just counting words.
 
 This work is based on:
 http://cscarioni.blogspot.co.uk/2012/09/setting-up-hadoop-virtual-cluster-with.html
