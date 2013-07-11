@@ -35,9 +35,9 @@ which is fine for testing. For simplicity, everything is running as `root`
 Once all machines are up and provisioned, the cluster can be started. Log into
 the master, format hdfs and start the cluster.
 
-    $ vagrant ssh master
-    $ sudo hadoop namenode -format
-    $ sudo start-all.sh
+     $ vagrant ssh master
+     $ sudo hadoop namenode -format
+     $ sudo start-all.sh
 
 After a little while, all daemons will be running and you have a fully working
 hadoop cluster.
@@ -68,10 +68,10 @@ you. Since everything else is name based, no other change is required.
 To interact with the cluster on the command line, log into the master and
 use the hadoop command as `root`.
 
-   $ vagrant ssh master
-   $ (master) sudo -i
-   $ (master) hadoop fs -ls /
-   $ ...
+    $ vagrant ssh master
+    $ (master) sudo -i
+    $ (master) hadoop fs -ls /
+    $ ...
 
 You can access the host file system from `/vagrant`, which means you can drop
 your hadoop job in there and run it on your own fully distributed hadoop
