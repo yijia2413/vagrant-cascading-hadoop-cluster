@@ -65,7 +65,7 @@ you. Since everything else is name based, no other change is required.
 ### Command line
 
 To interact with the cluster on the command line, log into the master and
-use the hadoop command as `root`.
+use the hadoop command as `root`(again, patches welcome).
 
     $ vagrant ssh master
     $ (master) sudo -i
