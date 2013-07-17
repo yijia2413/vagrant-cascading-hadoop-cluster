@@ -1,7 +1,7 @@
 # vagrant-hadoop-cluster - extended
 
-Deploying [apache-hadoop](http://hadoop.apache.org) in a virtualized cluster in
-simple steps. Have your own cluster for local testing or just counting words.
+Deploying [apache-hadoop](http://hadoop.apache.org) in a virtualized cluster as
+easy as 1-2-3. Have your own cluster for local testing or just counting words.
 
 This work is based on:
 http://cscarioni.blogspot.co.uk/2012/09/setting-up-hadoop-virtual-cluster-with.html
@@ -20,15 +20,15 @@ machines will be deployed using [pupptet](http://puppetlabs.com/). All of them
 will have hadoop (apache-hadoop-1.1.2) installed, ssh will be configured and
 local name resolution also works. 
 
-Hadoop is installed `/opt/hadoop-1.1.2` and all tools are in the `PATH`.
+Hadoop is installed in `/opt/hadoop-1.1.2` and all tools are in the `PATH`.
 
 The `master` machine acts as the namenode and jobtracker, the 3 others are data
 nodes and task trackers.
 
 ### Starting the cluster
 
-This cluster uses the `ssh-into-all-the-boxes-and-start-things-up-approach`,
-which is fine for testing. For simplicity, everything is running as `root`
+This cluster uses the `ssh-into-all-the-boxes-and-start-things-up`-approach,
+which is fine for testing. Also for simplicity, everything is running as `root`
 (patches welcome).
 
 Once all machines are up and provisioned, the cluster can be started. Log into
@@ -51,11 +51,11 @@ use, shut down all the services and tell vagrant to stop the machines like this:
      $ exit or Ctrl-D
      $ vagrant halt
 
-When you want to use it again, simply do this:
+When you want to use your cluster again, simply do this:
 
      $ vagrant up
      $ vagrant ssh master
-     $ sudo start-all.sh
+     $ (master) sudo start-all.sh
 
 
 ### Getting rid of the cluster
@@ -86,7 +86,7 @@ you are using linux, make sure you have `avahi-daemon` installed and it is
 running. On a Mac everything should just work (TM) witouth doing anything. 
 (Windows testers and patches welcome).
 
-The network used is 192.168.7.0/24. If that causes any problems, change the
+The network used is `192.168.7.0/24`. If that causes any problems, change the
 `Vagrantfile` and `modules/hadoop/file/hosts` files to something that works for
 you. Since everything else is name based, no other change is required.
 
@@ -135,6 +135,5 @@ vagrants built-in provisioner.
 - have it working on windows
 - run as other user than root
 - have a way to configure the names/ips in only one file
-- make it run with the vagrant-aws-plugin
 - have a way to define the hadoop version globally
 - use dynamic apache mirror for downloading
