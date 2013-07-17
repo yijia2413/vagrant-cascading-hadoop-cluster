@@ -52,7 +52,13 @@ ssh_authorized_key { "ssh_key":
 }
 
 exec { 'hadoop_in_path':
-    command => '/bin/echo \'export PATH=$PATH:/opt/hadoop-1.1.2/bin\' >> /etc/bash.bashrc '
+    command => '/bin/echo \'export PATH=$PATH:/opt/hadoop-1.1.2/bin\' >> /etc/bash.bashrc ',
+    unless => '/usr/bin/grep /opt/hadoop/ /etc/bash.bashrc '
+}
+
+exec { 'sdk_in_path':
+    command => '/bin/echo \'. /opt/CascadingSKD*/etc/sentenv.sh\' >> /etc/bash.bashrc ',
+    unless => '/usr/bin/grep /opt/hadoop/ /etc/bash.bashrc '
 }
 
 package { "avahi-daemon":
