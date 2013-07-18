@@ -87,7 +87,7 @@ running. On a Mac everything should just work (TM) witouth doing anything.
 (Windows testers and patches welcome).
 
 The network used is `192.168.7.0/24`. If that causes any problems, change the
-`Vagrantfile` and `modules/hadoop/file/hosts` files to something that works for
+`Vagrantfile` and `modules/avahi/file/hosts` files to something that works for
 you. Since everything else is name based, no other change is required.
 
 ### Command line
