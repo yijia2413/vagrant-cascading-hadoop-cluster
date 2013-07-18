@@ -1,8 +1,9 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
-Vagrant::Config.run do |config|
+Vagrant.configure("1") do |config|
   config.vm.box = "base-hadoop"
+
   config.vm.provision :puppet do |puppet|
      puppet.manifests_path = "manifests"
      puppet.manifest_file  = "base-hadoop.pp"
@@ -34,4 +35,10 @@ Vagrant::Config.run do |config|
     master_config.vm.host_name = "master"
   end
 
+end
+
+Vagrant.configure("2") do |config|
+    config.vm.provider :virtualbox do |vb|
+        vb.customize ["modifyvm", :id, "--memory", "1024"]
+    end
 end
