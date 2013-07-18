@@ -15,8 +15,11 @@ directory and run the following:
     $ vagrant box add base-hadoop http://files.vagrantup.com/lucid64.box
     $ vagrant up
 
-This will set up 4 machines - `master`, `hadoop1`, `hadoop2` and `hadoop3`. The
-machines will be deployed using [pupptet](http://puppetlabs.com/). All of them
+This will set up 4 machines - `master`, `hadoop1`, `hadoop2` and `hadoop3`. Each 
+of them will have two CPUs and 1GB of RAM. If this is too much for your machine, 
+adjust the `Vagrantfile`.
+
+The machines will be deployed using [pupptet](http://puppetlabs.com/). All of them
 will have hadoop (apache-hadoop-1.1.2) installed, ssh will be configured and
 local name resolution also works. 
 
