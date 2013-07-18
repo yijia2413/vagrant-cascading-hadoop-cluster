@@ -35,8 +35,8 @@ Once all machines are up and provisioned, the cluster can be started. Log into
 the master, format hdfs and start the cluster.
 
      $ vagrant ssh master
-     $ sudo hadoop namenode -format
-     $ sudo start-all.sh
+     $ (master) sudo hadoop namenode -format
+     $ (master) sudo start-all.sh
 
 After a little while, all daemons will be running and you have a fully working
 hadoop cluster.
