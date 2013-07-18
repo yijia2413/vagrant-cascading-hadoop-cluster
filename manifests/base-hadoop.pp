@@ -53,12 +53,20 @@ ssh_authorized_key { "ssh_key":
 
 exec { 'hadoop_in_path':
     command => '/bin/echo \'export PATH=$PATH:/opt/hadoop-1.1.2/bin\' >> /etc/bash.bashrc ',
-    unless => '/usr/bin/grep /opt/hadoop/ /etc/bash.bashrc '
+    unless => '/bin/grep /opt/hadoop /etc/bash.bashrc '
 }
 
-exec { 'sdk_in_path':
-    command => '/bin/echo \'. /opt/CascadingSKD*/etc/sentenv.sh\' >> /etc/bash.bashrc ',
-    unless => '/usr/bin/grep /opt/hadoop/ /etc/bash.bashrc '
+
+file { "/etc/profile.d/ccsdk.sh":
+  source => "puppet:///modules/hadoop/ccsdk.sh",
+  owner => root,
+  group => root,
+}
+
+file { "/etc/profile.d/hadoop-path.sh":
+  source => "puppet:///modules/hadoop/hadoop-path.sh",
+  owner => root,
+  group => root,
 }
 
 package { "avahi-daemon":
