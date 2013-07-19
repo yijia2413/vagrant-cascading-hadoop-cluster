@@ -1,7 +1,16 @@
-# vagrant-hadoop-cluster - extended
+# Vagrant + Cascading + Hadoop Cluster
 
-Deploying [apache-hadoop](http://hadoop.apache.org) in a virtualized cluster as
-easy as 1-2-3. Have your own cluster for local testing or just counting words.
+Clone this project to create a 4 node [Apache Hadoop](http://hadoop.apache.org) 
+cluster with the [Cascading SDK](http://www.cascading.org/sdk/) pre-installed.
+
+The Cascading 2.2 SDK includes Cascading and many of its sub-projects:
+
+* [Lingual](http://www.cascading.org/lingual/) - ANSI SQL Command Shell and JDBC Driver
+* [Pattern](http://www.cascading.org/pattern/) - Machine Learning
+* [Cascalog](http://cascalog.org) - Clojure DSL over Cascding
+* [Scalding](https://github.com/twitter/scalding) - Scala DSL over Cascading
+* [Multitool](http://www.cascading.org/multitool/) - Command line tool for managing large files
+* [Load](http://www.cascading.org/load/) - Command line tool for load testing Hadoop
 
 This work is based on:
 http://cscarioni.blogspot.co.uk/2012/09/setting-up-hadoop-virtual-cluster-with.html
@@ -19,7 +28,7 @@ This will set up 4 machines - `master`, `hadoop1`, `hadoop2` and `hadoop3`. Each
 of them will have two CPUs and 1GB of RAM. If this is too much for your machine, 
 adjust the `Vagrantfile`.
 
-The machines will be deployed using [pupptet](http://puppetlabs.com/). All of them
+The machines will be deployed using [Puppet](http://puppetlabs.com/). All of them
 will have hadoop (apache-hadoop-1.1.2) installed, ssh will be configured and
 local name resolution also works. 
 
