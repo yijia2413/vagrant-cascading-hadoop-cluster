@@ -25,7 +25,7 @@ directory and run the following:
     $ vagrant up
 
 This will set up 4 machines - `master`, `hadoop1`, `hadoop2` and `hadoop3`. Each 
-of them will have two CPUs and 1GB of RAM. If this is too much for your machine, 
+of them will have two CPUs and .5GB of RAM. If this is too much for your machine, 
 adjust the `Vagrantfile`.
 
 The machines will be deployed using [Puppet](http://puppetlabs.com/). All of them
