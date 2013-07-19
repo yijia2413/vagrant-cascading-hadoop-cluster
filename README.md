@@ -120,8 +120,7 @@ and 1 reduce task at a time.
 ## Cascading SDK
 
 The project supports deploying the [Cascading SDK](http://cascading.org/sdk) on
-the cluster as well. If you want that feature, remove the comment in
-`manifests/base-hadpp-pp` line 3. This will download the SDK and put all SDK
+the cluster as well.  Puppet will download the Cascading SDK 2.2-wip and put all SDK
 tools into the `PATH`. The SDK itself can be found in `/opt/CascadingSDK`.
 
 ## Hacking & Troubleshooting

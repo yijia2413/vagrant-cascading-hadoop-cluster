@@ -1,6 +1,6 @@
 include hadoop
 include avahi
-#include cascading
+include cascading
 group { "puppet":
   ensure => "present",
 }
