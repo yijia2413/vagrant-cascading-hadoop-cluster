@@ -145,14 +145,6 @@ tools into the `PATH`. The SDK itself can be found in `/opt/CascadingSDK`.
 
 ## Hacking & Troubleshooting
 
-### Slow download
-
-The puppet module is fetching the hadoop distribution from a hard-coded mirror.
-This is due to technical reasons with the mirror system of apache and out of my
-control.  If the mirror used is too slow for you, just point the URL in
-`/modules/hadoop/manifests/init.pp` line 5 to an
-[apache-mirror](http://www.apache.org/dyn/closer.cgi) closer to you.
-
 ### Puppet
 
 If you change any of the puppet modules, you can simply apply the changes with
