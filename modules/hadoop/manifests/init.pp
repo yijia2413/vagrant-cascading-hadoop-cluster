@@ -1,13 +1,17 @@
 class hadoop {
   $hadoop_home = "/opt/hadoop"
 
+  exec { "download_grrr":
+    command => "wget https://raw.github.com/fs111/grrrr/master/grrr -O /tmp/grrr && chmod +x /tmp/grrr",
+    path => $path,
+    creates => "/tmp/grrr",
+  }
+
   exec { "download_hadoop":
-    # pick a mirror closest to you: http://www.apache.org/dyn/closer.cgi
-    command => "wget -O /tmp/hadoop.tar.gz http://apache.mirrors.pair.com/hadoop/common/hadoop-1.1.2/hadoop-1.1.2.tar.gz",
-#    command => "wget -O /tmp/hadoop.tar.gz http://apache.openmirror.de/hadoop/common/hadoop-1.1.2/hadoop-1.1.2.tar.gz",
+    command => "/tmp/grrr /hadoop/common/hadoop-1.1.2/hadoop-1.1.2.tar.gz -O /tmp/hadoop.tar.gz",
     path => $path,
     unless => "ls /opt | grep hadoop-1.1.2",
-    require => Package["openjdk-6-jdk"]
+    require => [ Package["openjdk-6-jdk"], Exec["download_grrr"]]
   }
 
   exec { "unpack_hadoop" :
