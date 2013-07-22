@@ -162,9 +162,7 @@ vagrants built-in provisioner.
 
 ## Wishlist
 
-- move to newer version of ubuntu
 - have it working on windows
 - run as other user than root
 - have a way to configure the names/ips in only one file
 - have a way to define the hadoop version globally
-- use dynamic apache mirror for downloading
