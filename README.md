@@ -12,7 +12,7 @@ The Cascading 2.2 SDK includes Cascading and many of its sub-projects:
 * [Multitool](http://www.cascading.org/multitool/) - Command line tool for managing large files
 * [Load](http://www.cascading.org/load/) - Command line tool for load testing Hadoop
 
-To make getting started as easy as possible are the setup include build
+To make getting started as easy as possible does this setup include build
 tools used by parts of the SDK:
 
 * [gradle](http://www.gradle.org/) - build tool used by Cascading and its
