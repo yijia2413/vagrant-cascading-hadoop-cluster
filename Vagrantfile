@@ -2,7 +2,7 @@
 # vi: set ft=ruby :
 
 Vagrant.configure("1") do |config|
-  config.vm.box = "base-hadoop"
+  config.vm.box = "precise64"
 
   config.vm.define :hadoop1 do |hadoop1_config|
     hadoop1_config.vm.network :hostonly, "192.168.7.12"

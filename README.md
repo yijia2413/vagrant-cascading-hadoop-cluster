@@ -21,7 +21,7 @@ Simply clone the repository and install
 [vagrant](http://downloads.vagrantup.com/) for your platform. Change into the
 directory and run the following:
 
-    $ vagrant box add base-hadoop http://files.vagrantup.com/lucid64.box
+    $ vagrant box add http://files.vagrantup.com/precise64.box
     $ vagrant up
 
 This will set up 4 machines - `master`, `hadoop1`, `hadoop2` and `hadoop3`. Each 
