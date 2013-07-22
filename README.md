@@ -20,7 +20,7 @@ tools used by parts of the SDK:
 * [leiningen 2](http://leiningen.org/) - a popular build tool in the clojure
   community, which is used in the [cascalog](http://cascalog.org/) tutorial
   included in the SDK
-* [sbt](http://www.scala-sbt.org/) - a popular build tool in the scala, which is
+* [sbt](http://www.scala-sbt.org/) - a popular build tool in the scala community, which is
   used in the [scalding](https://github.com/twitter/scalding/wiki) tutorial included in the SDK
 
 This work is based on:
