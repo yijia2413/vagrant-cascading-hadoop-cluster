@@ -12,6 +12,17 @@ The Cascading 2.2 SDK includes Cascading and many of its sub-projects:
 * [Multitool](http://www.cascading.org/multitool/) - Command line tool for managing large files
 * [Load](http://www.cascading.org/load/) - Command line tool for load testing Hadoop
 
+To make getting started as easy as possible are the setup include build
+tools used by parts of the SDK:
+
+* [gradle](http://www.gradle.org/) - build tool used by Cascading and its
+  related projects
+* [leiningen 2](http://leiningen.org/) - a popular build tool in the clojure
+  community, which is used in the [cascalog](http://cascalog.org/) tutorial
+  included in the SDK
+* [sbt](http://www.scala-sbt.org/) - a popular build tool in the scala, which is
+  used in the [scalding](https://github.com/twitter/scalding/wiki) tutorial included in the SDK
+
 This work is based on:
 http://cscarioni.blogspot.co.uk/2012/09/setting-up-hadoop-virtual-cluster-with.html
 
