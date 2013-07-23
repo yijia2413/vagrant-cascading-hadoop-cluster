@@ -8,14 +8,15 @@ class hadoop {
   }
 
   exec { "download_hadoop":
-    command => "/tmp/grrr /hadoop/common/hadoop-1.1.2/hadoop-1.1.2.tar.gz -O /tmp/hadoop.tar.gz",
+    command => "/tmp/grrr /hadoop/common/hadoop-1.1.2/hadoop-1.1.2.tar.gz -O /vagrant/hadoop.tar.gz --read-timeout=5 --tries=0",
+    timeout => 1800,
     path => $path,
-    unless => "ls /opt | grep hadoop-1.1.2",
+    unless => "ls /vagrant | grep hadoop.tar.gz",
     require => [ Package["openjdk-6-jdk"], Exec["download_grrr"]]
   }
 
   exec { "unpack_hadoop" :
-    command => "tar xf /tmp/hadoop.tar.gz -C /opt",
+    command => "tar xf /vagrant/hadoop.tar.gz -C /opt",
     path => $path,
     creates => "${hadoop_home}-1.1.2",
     require => Exec["download_hadoop"]
