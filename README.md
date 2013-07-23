@@ -34,7 +34,7 @@ First install both [Virtual Box](http://virtualbox.org) and
 Then simply clone this repository, change into the new cloned directory, and run
 the following:
 
-    $ vagrant box add precise64 http://files.vagrantup.com/precise64.box
+    $ vagrant box add cascading-hadoop-base http://files.vagrantup.com/precise64.box
     $ vagrant up
 
 This will set up 4 machines - `master`, `hadoop1`, `hadoop2` and `hadoop3`. Each 
