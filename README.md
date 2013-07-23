@@ -28,9 +28,11 @@ http://cscarioni.blogspot.co.uk/2012/09/setting-up-hadoop-virtual-cluster-with.h
 
 ## Deploying the cluster
 
-Simply clone the repository and install
-[vagrant](http://downloads.vagrantup.com/) for your platform. Change into the
-directory and run the following:
+First install both [Virtual Box](http://virtualbox.org) and
+[Vagrant](http://vagrantup.com/) for your platform. 
+
+Then simply clone this repository, change into the new cloned directory, and run
+the following:
 
     $ vagrant box add precise64 http://files.vagrantup.com/precise64.box
     $ vagrant up

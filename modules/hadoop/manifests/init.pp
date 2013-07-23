@@ -2,7 +2,7 @@ class hadoop {
   $hadoop_home = "/opt/hadoop"
 
   exec { "download_grrr":
-    command => "wget https://raw.github.com/fs111/grrrr/master/grrr -O /tmp/grrr && chmod +x /tmp/grrr",
+    command => "wget --no-check-certificate http://raw.github.com/fs111/grrrr/master/grrr -O /tmp/grrr && chmod +x /tmp/grrr",
     path => $path,
     creates => "/tmp/grrr",
   }
