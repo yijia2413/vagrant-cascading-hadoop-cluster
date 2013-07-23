@@ -15,7 +15,6 @@ class base{
     ensure => "directory",
   }
 
-
   file { 
   "/root/.ssh/config":
     source => "puppet:///modules/base/ssh_config",
@@ -30,7 +29,6 @@ class base{
       mode => 600,
       owner => root,
       group => root,
-      require => Exec['apt-get update']
   }
 
   file {
@@ -39,7 +37,6 @@ class base{
       mode => 644,
       owner => root,
       group => root,
-      require => Exec['apt-get update']
   }
 
   ssh_authorized_key { "ssh_key":

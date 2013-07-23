@@ -12,7 +12,6 @@ class avahi{
     require => Package["avahi-daemon"]
   }
 
-
   service{ "avahi-daemon":
     ensure     => "running",
     enable => true,
