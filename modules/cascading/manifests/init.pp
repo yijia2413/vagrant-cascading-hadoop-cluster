@@ -47,7 +47,7 @@ class cascading{
   }
 
   exec { "download_gradle":  
-       command => "wget -q http://services.gradle.org/distributions/gradle-1.6-all.zip -O /tmp/gradle.zip && unzip -o /tmp/gradle.zip -d /opt/tools",
+       command => "wget -q http://services.gradle.org/distributions/gradle-1.6-bin.zip -O /tmp/gradle.zip && unzip -o /tmp/gradle.zip -d /opt/tools",
        path => $path,
        creates => "/opt/tools/gradle-1.6",
        require => Package["unzip"]
