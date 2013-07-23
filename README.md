@@ -154,6 +154,13 @@ vagrants built-in provisioner.
 
     $ vagrant provision
 
+### Hadoop download
+
+In order to save bandwidth and time we try to download hadoop only once and
+store it in the `/vagrant` directory, so that the other vms can reuse it. If the
+download fails for some reason, delete the tarball and rerun `vagrant
+provision`.
+
 ## Wishlist
 
 - have it working on windows
