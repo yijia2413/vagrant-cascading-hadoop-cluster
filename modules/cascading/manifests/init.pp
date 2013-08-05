@@ -57,6 +57,9 @@ class cascading{
     ensure => "installed"
   }
 
+  package { "curl":
+    ensure => "installed"
+  }
 
 
 }

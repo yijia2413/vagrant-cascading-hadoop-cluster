@@ -1,3 +1,4 @@
 *.sw[a-z]
 .vagrant
 hadoop.tar.gz
+employees.tgz
