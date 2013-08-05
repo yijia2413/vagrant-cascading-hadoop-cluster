@@ -42,10 +42,10 @@ of them will have two CPUs and .5GB of RAM. If this is too much for your machine
 adjust the `Vagrantfile`.
 
 The machines will be deployed using [Puppet](http://puppetlabs.com/). All of them
-will have hadoop (apache-hadoop-1.1.2) installed, ssh will be configured and
+will have hadoop (apache-hadoop-1.2.1) installed, ssh will be configured and
 local name resolution also works. 
 
-Hadoop is installed in `/opt/hadoop-1.1.2` and all tools are in the `PATH`.
+Hadoop is installed in `/opt/hadoop-1.2.1` and all tools are in the `PATH`.
 
 The `master` machine acts as the namenode and jobtracker, the 3 others are data
 nodes and task trackers.
