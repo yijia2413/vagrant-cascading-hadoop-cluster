@@ -17,4 +17,12 @@
     owner or group of files or directories.
   </description>
 </property>
+<property>
+    <name>dfs.data.dir</name>
+    <value>/srv/hadoop/datanode</value>
+</property>
+<property>
+    <name>dfs.name.dir</name>
+    <value>/srv/hadoop/namenode</value>
+</property>
 </configuration>

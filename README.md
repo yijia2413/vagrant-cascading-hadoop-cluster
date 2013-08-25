@@ -147,6 +147,11 @@ tools into the `PATH`. The SDK itself can be found in `/opt/CascadingSDK`.
 
 ## Hacking & Troubleshooting
 
+### Storage locations
+
+The namenode stores the `fsimage` in `/srv/hadoop/namenode`. The datanodes  are
+storing all data in `/srv/hadoop/datanode`.
+
 ### Puppet
 
 If you change any of the puppet modules, you can simply apply the changes with

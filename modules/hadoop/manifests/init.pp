@@ -1,6 +1,10 @@
 class hadoop {
   $hadoop_home = "/opt/hadoop"
 
+  file { ["/srv/hadoop/",  "/srv/hadoop/namenode", "/srv/hadoop/datanode/"]:
+    ensure => "directory"
+  }
+
   exec { "download_grrr":
     command => "wget --no-check-certificate http://raw.github.com/fs111/grrrr/master/grrr -O /tmp/grrr && chmod +x /tmp/grrr",
     path => $path,
