@@ -118,15 +118,14 @@ you. Since everything else is name based, no other change is required.
 ### Command line
 
 To interact with the cluster on the command line, log into the master and
-use the hadoop command as `root`(again, patches welcome).
+use the hadoop command.
 
     $ vagrant ssh master
-    $ (master) sudo -i
     $ (master) hadoop fs -ls /
     $ ...
 
-You can access the host file system from `/vagrant`, which means you can drop
-your hadoop job in there and run it on your own fully distributed hadoop
+You can access the host file system from the `/vagrant` directory, which means that
+you can drop your hadoop job in there and run it on your own fully distributed hadoop
 cluster.
 
 ## Performance
@@ -141,9 +140,8 @@ and 1 reduce task at a time.
 
 ## Cascading SDK
 
-The project supports deploying the [Cascading SDK](http://cascading.org/sdk) on
-the cluster as well.  Puppet will download the Cascading SDK 2.2-wip and put all SDK
-tools into the `PATH`. The SDK itself can be found in `/opt/CascadingSDK`.
+Puppet will download the Cascading SDK 2.2-wip and put all SDK
+tools in the `PATH`. The SDK itself can be found in `/opt/CascadingSDK`.
 
 ## Hacking & Troubleshooting
 
