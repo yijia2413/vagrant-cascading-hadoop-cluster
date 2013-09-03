@@ -60,7 +60,7 @@ Once all machines are up and provisioned, the cluster can be started. Log into
 the master, format hdfs and start the cluster.
 
      $ vagrant ssh master
-     $ (master) sudo hadoop namenode -format
+     $ (master) sudo hadoop namenode -format -force
      $ (master) sudo start-all.sh
 
 After a little while, all daemons will be running and you have a fully working
@@ -164,9 +164,14 @@ store it in the `/vagrant` directory, so that the other vms can reuse it. If the
 download fails for some reason, delete the tarball and rerun `vagrant
 provision`.
 
+We are also downloading a file containing checksums for the tarball. They are
+verified, before the cluster is started. If something went wrong during the
+download, you will see the `verify_tarball` part of puppet fail. If that is the
+case, delete the tarball and the checksum file (`<tarball>.mds`) and rerun
+`vagrant provision`.
+
 ## Wishlist
 
 - have it working on windows
 - run as other user than root
 - have a way to configure the names/ips in only one file
-- have a way to define the hadoop version globally
