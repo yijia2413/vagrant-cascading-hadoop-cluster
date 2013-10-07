@@ -5,7 +5,7 @@ class cascading{
   }
 
   exec { "download_sdk":
-    command => "wget -P /tmp -i http://files.concurrentinc.com/sdk/2.2/latest.txt",
+    command => "wget -P /tmp -i http://files.cascading.org/sdk/2.2/latest.txt",
     path => $path,
     # S3 can be slow at times hence a longer timeout
     timeout => 1800,
@@ -60,6 +60,4 @@ class cascading{
   package { "curl":
     ensure => "installed"
   }
-
-
 }
