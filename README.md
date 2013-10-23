@@ -29,9 +29,14 @@ http://cscarioni.blogspot.co.uk/2012/09/setting-up-hadoop-virtual-cluster-with.h
 ## Deploying the cluster
 
 First install both [Virtual Box](http://virtualbox.org) and
-[Vagrant](http://vagrantup.com/) for your platform. Please note, that there is a 
-[problem](https://github.com/mitchellh/vagrant/issues/2309) with vagrant 1.3.4. Please
-downgrade to 1.3.3.
+[Vagrant](http://vagrantup.com/) for your platform. 
+
+If you are using Virtual Box 4.3, you have to use at least vagrant 1.3.5. If you
+are using an older version of Virtual Box, you can use older versions of
+vagrant, however, there is a bug in vagrant 1.3.4, which breaks this cluster
+setup. If you are unsure, which version of vagrant to install, we recommend
+installing 1.3.5.
+
 
 Then simply clone this repository, change into the new cloned directory, and run
 the following:
