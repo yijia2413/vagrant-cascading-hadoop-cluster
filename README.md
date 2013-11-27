@@ -42,13 +42,21 @@ Then simply clone this repository, change into the new cloned directory, and run
 the following:
 
     $ vagrant box add cascading-hadoop-base http://files.vagrantup.com/precise64.box
+
+This will download the [vagrant base
+box](http://docs.vagrantup.com/v2/boxes.html) to be used by the cluster. You
+only have to do this the first time. Vagrant will keep a copy of the box file
+and will re-use it, every time you bring up a cluster.
+
+Now you can boot and provision the cluster:
+
     $ vagrant up
 
 This will set up 4 machines - `master`, `hadoop1`, `hadoop2` and `hadoop3`. Each 
 of them will have two CPUs and .5GB of RAM. If this is too much for your machine, 
 adjust the `Vagrantfile`.
 
-The machines will be deployed using [Puppet](http://puppetlabs.com/). All of them
+The machines will be provisioned using [Puppet](http://puppetlabs.com/). All of them
 will have hadoop (apache-hadoop-1.2.1) installed, ssh will be configured and
 local name resolution also works. 
 
