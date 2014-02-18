@@ -1,6 +1,6 @@
 # Vagrant + Cascading + Hadoop Cluster
 
-Clone this project to create a 4 node [Apache Hadoop](http://hadoop.apache.org) 
+Clone this project to create a 4 node [Apache Hadoop](http://hadoop.apache.org)
 cluster with the [Cascading SDK](http://www.cascading.org/sdk/) pre-installed.
 
 The Cascading 2.2 SDK includes Cascading and many of its sub-projects:
@@ -29,7 +29,7 @@ http://cscarioni.blogspot.co.uk/2012/09/setting-up-hadoop-virtual-cluster-with.h
 ## Deploying the cluster
 
 First install both [Virtual Box](http://virtualbox.org) and
-[Vagrant](http://vagrantup.com/) for your platform. 
+[Vagrant](http://vagrantup.com/) for your platform.
 
 If you are using Virtual Box 4.3, you have to use at least vagrant 1.3.5. If you
 are using an older version of Virtual Box, you can use older versions of
@@ -52,13 +52,13 @@ Now you can boot and provision the cluster:
 
     $ vagrant up
 
-This will set up 4 machines - `master`, `hadoop1`, `hadoop2` and `hadoop3`. Each 
-of them will have two CPUs and .5GB of RAM. If this is too much for your machine, 
+This will set up 4 machines - `master`, `hadoop1`, `hadoop2` and `hadoop3`. Each
+of them will have two CPUs and .5GB of RAM. If this is too much for your machine,
 adjust the `Vagrantfile`.
 
 The machines will be provisioned using [Puppet](http://puppetlabs.com/). All of them
 will have hadoop (apache-hadoop-1.2.1) installed, ssh will be configured and
-local name resolution also works. 
+local name resolution also works.
 
 Hadoop is installed in `/opt/hadoop-1.2.1` and all tools are in the `PATH`.
 
@@ -107,7 +107,7 @@ this:
 
 This will only delete the VMs all local files in the directory stay untouched
 and can be used again, if you decide to start up a new cluster.
-     
+
 
 ## Interacting with the cluster
 
@@ -116,7 +116,7 @@ and can be used again, if you decide to start up a new cluster.
 The namenode webinterface is available under http://master.local:50070/dfshealth.jsp and the
 jobtracker is available under http://master.local:50030/jobtracker.jsp
 
-The cluster uses [zeroconf](http://en.wikipedia.org/wiki/Zero-configuration_networking) 
+The cluster uses [zeroconf](http://en.wikipedia.org/wiki/Zero-configuration_networking)
 (a.k.a. bonjour) for name resolution. This means, that
 you never have to remember any IP nor will you have to fiddle with your
 `/etc/hosts` file.
@@ -148,11 +148,10 @@ cluster.
 
 Since this is a fully virtualized environment running on your computer, it will
 not be super-fast. This is not the goal of this setup. The goal is to have a fully
-distributed cluster for testing and troubleshooting. 
+distributed cluster for testing and troubleshooting.
 
 To not overload the host machine, has each tasktracker a hard limit of 1 map task
-and 1 reduce task at a time. 
-
+and 1 reduce task at a time.
 
 ## Cascading SDK
 
@@ -180,6 +179,19 @@ The setup is fully distributed. `hadoop1`, `hadoop2` and `hadoop3` are running a
 master is running on the `master` VM.
 
 The webinterface of the master is http://master.local:60010.
+
+## Single Node setup
+
+If your computer is not capable of running 4 VMs at a time, you can still
+benefit from this setup. The `single-node` directory contains an alternative
+`Vagrantfile`, which only starts the `master` and deploys everything on it.
+
+The interaction, the start- and stop sequence work the same ways as in the
+multi-VM cluster, except that it isn't fully distributed. This slimmed down
+version of the setup also does not include HBase.
+
+To run single node setup, run `vagrant up` in the `single-node` directory
+instead of the root directory. Everything else stays the same.
 
 ## Hacking & Troubleshooting
 

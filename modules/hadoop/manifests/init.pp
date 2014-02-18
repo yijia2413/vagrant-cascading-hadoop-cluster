@@ -1,8 +1,24 @@
-class hadoop {
+class hadoop($slaves_file = undef, $hdfs_site_file = undef) {
+
   $hadoop_version = "1.2.1"
   $hadoop_home = "/opt/hadoop-${hadoop_version}"
+  $hadoop_conf_dir = "/opt/hadoop-${hadoop_version}/conf"
   $hadoop_tarball = "hadoop-${hadoop_version}.tar.gz"
   $hadoop_tarball_checksums = "${hadoop_tarball}.mds"
+
+
+  if $slaves_file == undef {
+    $_slaves_file = "puppet:///modules/hadoop/slaves"
+  }
+  else {
+    $_slaves_file = $slaves_file
+  }
+  if $hdfs_site_file == undef {
+    $_hdfs_site_file = "puppet:///modules/hadoop/hdfs-site.xml"
+  }
+  else {
+    $_hdfs_site_file = $hdfs_site_file
+  }
 
   file { ["/srv/hadoop/",  "/srv/hadoop/namenode", "/srv/hadoop/datanode/"]:
     ensure => "directory"
@@ -57,8 +73,8 @@ class hadoop {
   }
 
   file {
-    "${hadoop_home}/conf/slaves":
-      source => "puppet:///modules/hadoop/slaves",
+    "${hadoop_conf_dir}/slaves":
+      source => $_slaves_file,
       mode => 644,
       owner => vagrant,
       group => root,
@@ -93,8 +109,8 @@ class hadoop {
   }
 
   file {
-    "${hadoop_home}/conf/hdfs-site.xml":
-      source => "puppet:///modules/hadoop/hdfs-site.xml",
+    "${hadoop_conf_dir}/hdfs-site.xml":
+      source => $_hdfs_site_file,
       mode => 644,
       owner => vagrant,
       group => root,
