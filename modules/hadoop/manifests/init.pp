@@ -2,7 +2,6 @@ class hadoop($slaves_file = undef, $hdfs_site_file = undef) {
 
   $hadoop_version = "2.2.0"
   $hadoop_home = "/opt/hadoop-${hadoop_version}"
-  $hadoop_conf_dir = "/opt/hadoop-${hadoop_version}/conf"
   $hadoop_tarball = "hadoop-${hadoop_version}.tar.gz"
   $hadoop_tarball_checksums = "${hadoop_tarball}.mds"
   $hadoop_conf_dir = "${hadoop_home}/etc/hadoop"
