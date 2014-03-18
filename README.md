@@ -36,7 +36,7 @@ This will set up 4 machines - `master`, `hadoop1`, `hadoop2` and `hadoop3`. Each
 RAM. If this is too much for your machine, adjust the `Vagrantfile`.
 
 The machines will be provisioned using [Puppet](http://puppetlabs.com/). All of them will have hadoop
-(apache-hadoop-2.2.0) installed, ssh will be configured and local name resolution also works.
+(apache-hadoop-2.3.0) installed, ssh will be configured and local name resolution also works.
 
 Hadoop is installed in `/opt/hadoop-2.3.0` and all tools are in the `PATH`.
 
