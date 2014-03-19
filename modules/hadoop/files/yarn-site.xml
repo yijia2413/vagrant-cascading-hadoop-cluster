@@ -30,8 +30,8 @@
       <name>yarn.web-proxy.address</name>
       <value>master.local:8100</value>
   </property>
-  <property>
+  <!--property>
       <name>yarn.nodemanager.resource.memory-mb</name>
-      <value>1024</value>
-  </property>
+      <value>512</value>
+  </property-->
 </configuration>
