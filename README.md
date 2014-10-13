@@ -3,7 +3,7 @@
 Clone this project to create a 4 node [Apache Hadoop](http://hadoop.apache.org) cluster with the [Cascading
 SDK](http://www.cascading.org/sdk/) pre-installed.
 
-The Cascading 2.5 SDK includes Cascading and many of its sub-projects:
+The Cascading 2.6 SDK includes Cascading and many of its sub-projects:
 
 * [Lingual](http://www.cascading.org/lingual/) - ANSI SQL Command Shell and JDBC Driver
 * [Pattern](http://www.cascading.org/pattern/) - Machine Learning
@@ -36,9 +36,9 @@ This will set up 4 machines - `master`, `hadoop1`, `hadoop2` and `hadoop3`. Each
 RAM. If this is too much for your machine, adjust the `Vagrantfile`.
 
 The machines will be provisioned using [Puppet](http://puppetlabs.com/). All of them will have hadoop
-(apache-hadoop-2.3.0) installed, ssh will be configured and local name resolution also works.
+(apache-hadoop-2.4.1) installed, ssh will be configured and local name resolution also works.
 
-Hadoop is installed in `/opt/hadoop-2.3.0` and all tools are in the `PATH`.
+Hadoop is installed in `/opt/hadoop-2.4.1` and all tools are in the `PATH`.
 
 The `master` machine acts as the namenode and the yarn resource manager, the 3 others are data nodes and run node
 managers.
@@ -126,7 +126,7 @@ To not overload the host machine, has each tasktracker a hard limit of 1 map tas
 
 ## Cascading SDK
 
-Puppet will download the latest [Cascading SDK](http://www.cascading.org/sdk/) 2.5-wip build and put all SDK tools in
+Puppet will download the latest [Cascading SDK](http://www.cascading.org/sdk/) 2.6-wip build and put all SDK tools in
 the `PATH`. The SDK itself can be found in `/opt/CascadingSDK`.
 
 ### Driven
