@@ -59,11 +59,11 @@ class hadoop($slaves_file = undef, $hdfs_site_file = undef) {
       group => root,
   }
 
-  exec{ "verify_tarball":
-    command =>  "/tmp/verifier /vagrant/${hadoop_tarball_checksums}",
-    path => $path,
-    require => [File["/tmp/verifier"], Exec["download_hadoop"], Exec["download_checksum"]]
-  }
+  #exec{ "verify_tarball":
+  #  command =>  "/tmp/verifier /vagrant/${hadoop_tarball_checksums}",
+  #  path => $path,
+  #  require => [File["/tmp/verifier"], Exec["download_hadoop"], Exec["download_checksum"]]
+  #}
 
   exec { "unpack_hadoop" :
     command => "tar xf /vagrant/${hadoop_tarball} -C /opt",
