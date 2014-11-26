@@ -69,7 +69,7 @@ class hadoop($slaves_file = undef, $hdfs_site_file = undef) {
     command => "tar xf /vagrant/${hadoop_tarball} -C /opt",
     path => $path,
     creates => "${hadoop_home}",
-    require => Exec["verify_tarball"]
+    require => Exec["download_hadoop"]
   }
 
   exec { "hadoop_conf_permissions" :
