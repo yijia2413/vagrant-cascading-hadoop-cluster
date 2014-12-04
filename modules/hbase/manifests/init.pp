@@ -20,7 +20,7 @@ class hbase {
     command => "tar xf /vagrant/${hbase_tarball} -C /opt",
     path => $path,
     creates => "${hbase_home}",
-    require => Exec["verify_tarball"]
+    require => Exec["download_hbase"]
   }
 
   file {
