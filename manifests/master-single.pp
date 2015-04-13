@@ -5,6 +5,6 @@ class{ 'hadoop':
   hdfs_site_file => "puppet:///modules/hadoop/hdfs-site-single.xml"
 }
 
-#include hbase
+include hbase
 include avahi
 include cascading
