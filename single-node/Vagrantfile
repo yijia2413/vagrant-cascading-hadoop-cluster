@@ -15,10 +15,14 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     master.vm.network "private_network", ip: "192.168.7.10"
     master.vm.hostname = "master.local"
 
-    config.vm.provision :puppet do |puppet|
-      puppet.manifest_file = "master-single.pp"
-      puppet.module_path = "../modules"
-      puppet.manifests_path = "../manifests"
+#    config.vm.provision :puppet do |puppet|
+#      puppet.manifest_file = "master-single.pp"
+#      puppet.module_path = "../modules"
+#      puppet.manifests_path = "../manifests"
+	config.vm.provision :puppet, :options => ["--debug --trace --verbose"] do |puppet|
+		puppet.manifest_file  = "master-single.pp"
+		puppet.manifests_path = "../manifests"
+		puppet.module_path = "../modules"
     end
   end
 end
